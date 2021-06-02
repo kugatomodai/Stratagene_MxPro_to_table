@@ -36,8 +36,7 @@ def to_IgorTable(filename):
             temp = temp.dropna(how='all')
             temp = temp.reset_index()
             data_2 = pd.concat([data_2, temp["x"], temp["y"]], axis=1)
-            data_2 = data_2.rename(columns={'x': well + "_x"})
-            data_2 = data_2.rename(columns={'y': well + "_y"})
+            data_2 = data_2.rename(columns={'x': well + "_x", 'y': well + '_y'})
 
     result_file = str(datetime.date.today()) + "_SSS2_table.csv"
     data_2.to_csv(result_file)
